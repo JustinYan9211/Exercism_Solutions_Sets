@@ -1,0 +1,27 @@
+"""Functions for determining triangle types: equilateral, isosceles, and scalene."""
+
+
+def is_valid_triangle(sides: list[int]) -> bool:
+    a, b, c = sides
+    return a + b > c and a + c > b and b + c > a
+    if len(sides) != 3:
+        return False
+        raise ("ValueError: not enough values to unpack")
+        
+    
+
+
+def equilateral(sides: list[int]) -> bool:
+    a, b, c = sides
+    return (a == b == c) and is_valid_triangle(sides)
+        
+
+def isosceles(sides: list[int]) -> bool:
+    a, b, c = sides
+    return (a == b or a == c or b == c) and is_valid_triangle(sides)
+
+
+
+def scalene(sides: list[int]) -> bool:
+    a, b, c = sides
+    return (a != b and b != c and a != c) and is_valid_triangle(sides)
